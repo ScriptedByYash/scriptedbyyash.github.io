@@ -66,6 +66,21 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
         }
+        .profile-pic {
+            width: 120px;       /* circle size */
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;     /* center */
+            border: 4px solid white; /* optional border */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* keeps image proportion */
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -103,7 +118,9 @@
         <div class="max-w-4xl mx-auto px-4 text-center">
             <div class="mb-8">
                 <div class="w-32 h-32 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <i class="fas fa-user text-4xl text-white"></i>
+                    <div class="profile-pic">
+                         <img src="myphoto.jpg" alt="Yashraj Patel">
+                    </div>
                 </div>
                 <h1 class="text-5xl md:text-6xl font-bold mb-4">YASHRAJ PATEL</h1>
                 <div class="text-xl md:text-2xl mb-6 h-8">
