@@ -1,158 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yashraj Patel • Oracle Fusion Consultant</title>
-  <meta name="description" content="Portfolio of Yashraj Patel — Oracle Fusion Consultant specializing in Oracle EBS R12, Fusion, BI Publisher, integrations, SQL/PLSQL." />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <title>Suryadoot Energy Solution | On-Grid Solar Experts</title>
+  <meta name="description" content="Suryadoot Energy Solution - On-Grid Solar System design, installation, subsidy assistance, commissioning, and AMC. Powering the future with the sun." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root { --brand: 255 115 179; --ink: 19 23 34; --paper: 248 250 252; }
-    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.08); }
-    .grad-hero { background: radial-gradient(1200px 600px at 10% -10%, rgba(99,102,241,.35), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(236,72,153,.35), transparent 50%), linear-gradient(180deg, #0B1020 0%, #0E1327 100%); }
-    .grad-card { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)); }
-    .ring-brand { box-shadow: 0 0 0 3px rgba(236,72,153,.25); }
-    .tag { transition: transform .15s ease, background-color .2s ease; }
-    .tag:hover { transform: translateY(-1px); }
-    .shine { position: relative; overflow: hidden; }
-    .shine:before { content:""; position:absolute; inset:-150% -50%; background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,.15), transparent 60%); transform: rotate(8deg); animation: shine 6s linear infinite; }
-    @keyframes shine { 0%{ transform: translateX(-60%) rotate(8deg);} 100%{ transform: translateX(60%) rotate(8deg);} }
-    .btn { transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn:active { transform: translateY(0); }
-    .fade-in { animation: fade .6s ease both; }
-    @keyframes fade { from{opacity:0; transform: translateY(6px);} to{opacity:1; transform: translateY(0);} }
-    .pill { border-radius: 999px; }
+    :root {
+      --brand-amber: #f59e0b;
+      --brand-yellow: #fbbf24;
+      --brand-deep: #0b1026;
+      --brand-sky: #0ea5e9;
+      --brand-teal: #14b8a6;
+      --brand-lime: #84cc16;
+    }
     html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; }
+    /* Subtle animated gradient background */
+    .bg-solar {
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(250,204,21,0.25), transparent 60%),
+                  radial-gradient(900px 600px at 10% 10%, rgba(14,165,233,0.18), transparent 60%),
+                  linear-gradient(180deg, #0b1026 0%, #0b132b 40%, #0e1a44 100%);
+    }
+    /* Floating sun animation */
+    .sun-orbit { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    /* Soft glow for primary buttons */
+    .btn-glow { box-shadow: 0 8px 24px rgba(251,191,36,0.35), inset 0 0 0 1px rgba(255,255,255,0.15); }
+    .card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); }
+    .divider-gradient { background: linear-gradient(90deg, transparent, rgba(250,204,21,0.5), transparent); height: 1px; }
+    /* Hide number input spinners */
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
   </style>
 </head>
-<body class="bg-[#0B1020] text-slate-100 font-[Outfit] selection:bg-pink-500/30 selection:text-white">
-  <!-- Top Gradient Aura -->
-  <div class="pointer-events-none fixed -top-24 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] rounded-full blur-3xl opacity-25" style="background: radial-gradient(closest-side, rgba(99,102,241,.35), transparent);"></div>
+<body class="bg-solar text-white antialiased">
+  <!-- Top Bar -->
+  <div class="hidden md:block">
+    <div class="max-w-7xl mx-auto px-6 py-2 text-sm flex items-center justify-between text-white/80">
+      <div class="flex items-center gap-4">
+        <a href="tel:+91XXXXXXXXXX" class="hover:text-white transition">📱 +91-XXXXXXXXXX</a>
+        <span class="opacity-40">|</span>
+        <a href="mailto:info@suryadootenergy.com" class="hover:text-white transition">📧 info@suryadootenergy.com</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          MNRE & DISCOM Approved Vendor
+        </span>
+      </div>
+    </div>
+    <div class="divider-gradient"></div>
+  </div>
 
   <!-- Navbar -->
-  <header class="sticky top-0 z-40">
-    <nav class="max-w-6xl mx-auto px-5 py-4">
-      <div class="flex items-center justify-between rounded-2xl glass border border-white/10 px-5 py-3">
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-pink-500 grid place-items-center text-white font-extrabold">
-            Y
-          </div>
-          <div class="leading-5">
-            <p class="font-semibold">Yashraj Patel</p>
-            <p class="text-xs text-slate-300/80">Oracle Fusion Consultant</p>
-          </div>
-        </a>
-        <div class="hidden md:flex items-center gap-1">
-          <a href="#about" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">About</a>
-          <a href="#experience" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Experience</a>
-          <a href="#projects" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Projects</a>
-          <a href="#skills" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Skills</a>
-          <a href="#education" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Education</a>
-          <a href="#contact" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Contact</a>
+  <header class="sticky top-0 z-50 bg-[#0b132b]/80 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <span class="relative">
+          <span class="absolute inset-0 rounded-full bg-yellow-300/30 blur-lg"></span>
+          <svg class="relative w-9 h-9 text-yellow-300 sun-orbit" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <g stroke="currentColor" stroke-width="1.2">
+              <line x1="12" y1="1.5" x2="12" y2="5"></line>
+              <line x1="12" y1="19" x2="12" y2="22.5"></line>
+              <line x1="1.5" y1="12" x2="5" y2="12"></line>
+              <line x1="19" y1="12" x2="22.5" y2="12"></line>
+              <line x1="4.2" y1="4.2" x2="6.8" y2="6.8"></line>
+              <line x1="17.2" y1="17.2" x2="19.8" y2="19.8"></line>
+              <line x1="4.2" y1="19.8" x2="6.8" y2="17.2"></line>
+              <line x1="17.2" y1="6.8" x2="19.8" y2="4.2"></line>
+            </g>
+          </svg>
+        </span>
+        <div>
+          <div class="text-lg font-extrabold tracking-tight">Suryadoot Energy</div>
+          <div class="text-xs text-white/60 -mt-1">Powering the Future</div>
         </div>
-        <div class="flex items-center gap-2">
-          <button id="themeToggle" aria-label="Toggle theme" class="btn rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20">
-            <span class="inline-block" id="themeIcon">
-              <!-- Moon Icon -->
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-yellow-300">
-                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </span>
-          </button>
-          <a href="mailto:Kodsayash@gmail.com" class="btn hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-indigo-500 text-white shadow-lg shadow-pink-500/20 hover:shadow-pink-500/30">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="white" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="white" stroke-width="1.5"/></svg>
-            Contact
-          </a>
-          <button id="menuBtn" class="md:hidden btn rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20" aria-label="Open menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-white"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-        </div>
-      </div>
-      <div id="mobileMenu" class="md:hidden mt-2 hidden rounded-2xl glass border border-white/10 p-2">
-        <a href="#about" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">About</a>
-        <a href="#experience" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Experience</a>
-        <a href="#projects" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Projects</a>
-        <a href="#skills" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Skills</a>
-        <a href="#education" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Education</a>
-        <a href="#contact" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Contact</a>
-      </div>
-    </nav>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-white/80">
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#services" class="hover:text-white transition">Services</a>
+        <a href="#why" class="hover:text-white transition">Why Us</a>
+        <a href="#ongrid" class="hover:text-white transition">On-Grid</a>
+        <a href="#estimator" class="hover:text-white transition">Estimator</a>
+        <a href="#testimonials" class="hover:text-white transition">Testimonials</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+        <a href="https://suryadootenergy.github.io/" target="_blank" rel="noopener" class="px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 transition border border-white/10">Website</a>
+      </nav>
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-white/10 border border-white/10 hover:bg-white/20" aria-label="Open menu">☰</button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+      <nav class="px-6 py-4 grid grid-cols-2 gap-3 text-white/90">
+        <a href="#about" class="px-3 py-2 rounded bg-white/5 hover:bg-white/10">About</a>
+        <a href="#services" class="px-3 py-2 rounded bg-white/5 hover:bg-white/10">Services</a>
+        <a href="#why" class="px-3 py-2 rounded bg-white/5 hover:bg-white/10">Why Us</a>
+        <a href="#ongrid" class="px-3 py-2 rounded bg-white/5 hover:bg-white/10">On-Grid</a>
+        <a href="#estimator" class="px-3 py-2 rounded bg-white/5 hover:bg-white/10">Estimator</a>
+        <a href="#testimonials" class="px-3 py-2 rounded bg-white/5 hover:bg-white/10">Testimonials</a>
+        <a href="#contact" class="px-3 py-2 rounded bg-white/5 hover:bg-white/10">Contact</a>
+        <a href="https://suryadootenergy.github.io/" target="_blank" rel="noopener" class="px-3 py-2 rounded bg-white/10 hover:bg-white/20">Website</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero -->
-  <section class="grad-hero">
-    <div class="max-w-6xl mx-auto px-5 pt-14 pb-20 md:pt-20 md:pb-28">
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 opacity-30 pointer-events-none">
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gridG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.15"/>
+          </linearGradient>
+        </defs>
+        <pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M60 0H0v60" fill="none" stroke="url(#gridG)" stroke-width="1"/>
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#p)"/>
+      </svg>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-16 md:pb-24 relative">
       <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div class="space-y-6 fade-in">
-          <div class="inline-flex items-center gap-2 pill bg-white/10 px-3 py-1 text-xs text-slate-200 border border-white/10">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Open to opportunities
-          </div>
-          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
-            Yashraj Patel
-            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-indigo-400">Oracle Fusion Consultant</span>
+        <div>
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-yellow-300 bg-yellow-300/10 border border-yellow-300/30 px-3 py-1 rounded-full">
+            ⚡ On-Grid Solar Specialists
+          </span>
+          <h1 class="mt-5 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Suryadoot Energy Solution
           </h1>
-          <p class="text-slate-300/90 leading-relaxed">
-            Results-oriented consultant skilled in Oracle EBS R12 and Fusion Applications. I design and ship scalable solutions across reporting, data migration, and integrations using BI Publisher, MuleSoft, SQL/PLSQL—focused on Financials and Expense modules.
+          <p class="mt-4 text-white/80 text-lg">
+            Powering the Future with the Sun. We design, install, and maintain high-efficiency on-grid solar systems for homes, businesses, and industries.
           </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="#projects" class="btn shine pill bg-gradient-to-r from-pink-500 to-indigo-500 text-white px-5 py-3 font-semibold">See My Work</a>
-            <button id="downloadResume" class="btn pill px-5 py-3 font-semibold bg-white/10 hover:bg-white/20 border border-white/10 text-white">Download Resume</button>
-            <a href="mailto:Kodsayash@gmail.com" class="btn pill px-5 py-3 font-semibold bg-emerald-500/90 hover:bg-emerald-500 text-emerald-950">
-              Email Me
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#contact" class="btn-glow inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition">
+              Request Free Site Visit ✅
+            </a>
+            <a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/15 hover:bg-white/20 transition">
+              Explore Services
             </a>
           </div>
-
-          <div class="flex flex-wrap gap-3 pt-2">
-            <a href="https://linkedin.com/in/yashraj-patel-812bb7299" target="_blank" rel="noopener" class="pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-2">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 10v7M8 7v.01M12 17v-4a3 3 0 016 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://github.com/Kodsayash" target="_blank" rel="noopener" class="pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-2">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.9 9.6.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.4-1-.9-1.3-.9-1.3-.7-.5.1-.5.1-.5.8.1 1.2.9 1.2.9.7 1.2 1.9.9 2.4.7.1-.5.3-.9.6-1.1-2.2-.3-4.5-1.1-4.5-5 0-1.1.4-2 .9-2.8 0 0-.2-.7.1-1.6 0 0 .7-.2 2.3.9.7-.2 1.5-.3 2.3-.3s1.6.1 2.3.3c1.6-1.1 2.3-.9 2.3-.9.3.9.1 1.6.1 1.6.6.8.9 1.7.9 2.8 0 3.9-2.3 4.7-4.5 5 .3.2.6.7.6 1.5v2.2c0 .3.2.6.7.5 4-1.3 6.9-5.1 6.9-9.6C22 6.6 17.5 2 12 2z" fill="currentColor"/></svg>
-              GitHub
-            </a>
-            <button data-copy="+917999882566" class="copy pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-2" aria-label="Copy phone">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 3h8a2 2 0 012 2v12a2 2 0 01-2 2H8" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="7" width="8" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
-              Copy Phone
-            </button>
-            <button data-copy="Kodsayash@gmail.com" class="copy pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-2" aria-label="Copy email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"/></svg>
-              Copy Email
-            </button>
+          <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+            <div class="card rounded-xl p-4">
+              <div class="text-2xl font-extrabold text-yellow-300">25+ yrs</div>
+              <div class="text-xs text-white/70">Panel Warranty</div>
+            </div>
+            <div class="card rounded-xl p-4">
+              <div class="text-2xl font-extrabold text-yellow-300">Free</div>
+              <div class="text-xs text-white/70">Site Survey</div>
+            </div>
+            <div class="card rounded-xl p-4">
+              <div class="text-2xl font-extrabold text-yellow-300">MNRE</div>
+              <div class="text-xs text-white/70">Subsidy Support</div>
+            </div>
           </div>
         </div>
-        <div class="relative fade-in">
-          <div class="absolute -inset-1 bg-gradient-to-tr from-indigo-500/40 to-pink-500/40 rounded-3xl blur-2xl"></div>
-          <div class="relative grad-card rounded-3xl border border-white/10 p-6 md:p-8">
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-2xl p-4 bg-white/5 border border-white/10">
-                <p class="text-sm text-slate-300">Specialization</p>
-                <p class="mt-1 font-semibold">Financials & Expenses</p>
-              </div>
-              <div class="rounded-2xl p-4 bg-white/5 border border-white/10">
-                <p class="text-sm text-slate-300">Experience</p>
-                <p class="mt-1 font-semibold">Oracle EBS & Fusion</p>
-              </div>
-              <div class="rounded-2xl p-4 bg-white/5 border border-white/10">
-                <p class="text-sm text-slate-300">Reporting</p>
-                <p class="mt-1 font-semibold">BI Publisher</p>
-              </div>
-              <div class="rounded-2xl p-4 bg-white/5 border border-white/10">
-                <p class="text-sm text-slate-300">Integrations</p>
-                <p class="mt-1 font-semibold">MuleSoft, REST/SOAP</p>
-              </div>
-            </div>
-            <div class="mt-6 rounded-2xl bg-white/5 border border-white/10 p-5">
-              <p class="text-sm text-slate-300">Core Focus</p>
-              <ul class="mt-2 grid grid-cols-2 gap-2">
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span> Data Migration</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Report Bursting</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span> CI/CD (Git/Jenkins)</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> API Integrations</li>
-              </ul>
+        <div class="relative">
+          <!-- Solar illustration -->
+          <div class="card rounded-2xl p-6 md:p-8">
+            <svg viewBox="0 0 600 420" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="roof" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#0ea5e9"/>
+                  <stop offset="100%" stop-color="#22d3ee"/>
+                </linearGradient>
+                <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#fde68a"/>
+                  <stop offset="100%" stop-color="#f59e0b"/>
+                </linearGradient>
+              </defs>
+              <!-- Sun -->
+              <g transform="translate(470,60)">
+                <circle r="40" fill="url(#sun)" />
+                <g stroke="#fde68a" stroke-width="2" opacity="0.7">
+                  <line x1="0" y1="-60" x2="0" y2="-90"/>
+                  <line x1="0" y1="60" x2="0" y2="90"/>
+                  <line x1="-60" y1="0" x2="-90" y2="0"/>
+                  <line x1="60" y1="0" x2="90" y2="0"/>
+                  <line x1="-42" y1="-42" x2="-64" y2="-64"/>
+                  <line x1="42" y1="42" x2="64" y2="64"/>
+                  <line x1="-42" y1="42" x2="-64" y2="64"/>
+                  <line x1="42" y1="-42" x2="64" y2="-64"/>
+                </g>
+              </g>
+              <!-- Roof -->
+              <polygon points="80,220 300,120 520,220 520,320 80,320" fill="#0b132b" stroke="#1f2a55" stroke-width="3"/>
+              <!-- Panels -->
+              <g transform="translate(135,175)">
+                <g fill="url(#roof)" stroke="#89f" stroke-width="1.5">
+                  <rect x="0" y="0" width="95" height="55" rx="6"/>
+                  <rect x="105" y="0" width="95" height="55" rx="6"/>
+                  <rect x="210" y="0" width="95" height="55" rx="6"/>
+                </g>
+                <g fill="url(#roof)" stroke="#89f" stroke-width="1.5" transform="translate(15,65)">
+                  <rect x="0" y="0" width="95" height="55" rx="6"/>
+                  <rect x="105" y="0" width="95" height="55" rx="6"/>
+                  <rect x="210" y="0" width="95" height="55" rx="6"/>
+                </g>
+              </g>
+              <!-- Inverter and meter -->
+              <rect x="90" y="340" width="80" height="50" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+              <rect x="430" y="340" width="80" height="50" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+              <text x="130" y="370" text-anchor="middle" fill="#93c5fd" font-size="12">Inverter</text>
+              <text x="470" y="370" text-anchor="middle" fill="#93c5fd" font-size="12">Net Meter</text>
+              <!-- Lines -->
+              <path d="M170 365 H430" stroke="#60a5fa" stroke-width="3" stroke-dasharray="6 6" />
+            </svg>
+            <div class="mt-4 text-center text-white/70">
+              Clean, reliable, and cost-effective solar for every rooftop.
             </div>
           </div>
         </div>
@@ -161,399 +222,521 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="md:col-span-2">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Professional Summary</h2>
-        <div class="grad-card rounded-3xl border border-white/10 p-6 md:p-8">
-          <p class="text-slate-300 leading-relaxed">
-            A results-oriented Oracle Fusion Consultant with experience in Oracle EBS R12, Fusion Applications, SQL, and PL/SQL. Skilled in report development, data migration, integration, and automation using BI Publisher, MuleSoft, Git, and Jenkins. Strong background in financial and expense module implementations with a proven ability to design, optimize, and deliver scalable solutions.
+  <section id="about" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-5 gap-10 items-start">
+        <div class="md:col-span-2">
+          <h2 class="text-3xl md:text-4xl font-extrabold">About Us</h2>
+          <p class="mt-4 text-white/80">
+            At Suryadoot Energy Solution, we specialize in designing, installing, and maintaining On-Grid Solar Power Systems for residential, commercial, and industrial clients. With a commitment to clean energy and sustainable growth, we help you reduce electricity bills while contributing to a greener planet.
           </p>
-          <div class="flex flex-wrap gap-2 mt-5">
-            <span class="tag pill px-3 py-1 bg-pink-500/15 text-pink-300 border border-pink-400/20">Oracle Fusion</span>
-            <span class="tag pill px-3 py-1 bg-indigo-500/15 text-indigo-300 border border-indigo-400/20">EBS R12</span>
-            <span class="tag pill px-3 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-400/20">BI Publisher</span>
-            <span class="tag pill px-3 py-1 bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-400/20">MuleSoft</span>
-            <span class="tag pill px-3 py-1 bg-cyan-500/15 text-cyan-300 border border-cyan-400/20">REST/SOAP</span>
+          <p class="mt-4 text-white/80">
+            Our team of experts ensures that each solar project is tailored to your needs, budget, and power consumption pattern — delivering efficiency, performance, and peace of mind.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="px-3 py-1 rounded-full bg-emerald-400/15 text-emerald-300 border border-emerald-400/25 text-sm">End-to-End Execution</span>
+            <span class="px-3 py-1 rounded-full bg-sky-400/15 text-sky-300 border border-sky-400/25 text-sm">Quality Equipment</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-400/15 text-yellow-300 border border-yellow-400/25 text-sm">Subsidy Guidance</span>
+          </div>
+        </div>
+        <div class="md:col-span-3">
+          <div class="card rounded-2xl p-6">
+            <div class="grid sm:grid-cols-3 gap-6">
+              <div class="p-5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-3xl">🏠</div>
+                <div class="mt-2 font-semibold">Residential</div>
+                <div class="text-white/70 text-sm mt-1">Rooftop on-grid systems for homes</div>
+              </div>
+              <div class="p-5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-3xl">🏢</div>
+                <div class="mt-2 font-semibold">Commercial</div>
+                <div class="text-white/70 text-sm mt-1">Offices, shops, institutions</div>
+              </div>
+              <div class="p-5 rounded-xl bg-white/5 border border-white/10">
+                <div class="text-3xl">🏭</div>
+                <div class="mt-2 font-semibold">Industrial</div>
+                <div class="text-white/70 text-sm mt-1">Factories & large loads</div>
+              </div>
+            </div>
+            <div class="mt-6 text-sm text-white/60">
+              MNRE & DISCOM Approved Vendor • Net Metering Documentation • 25-Year Panel Warranty
+            </div>
           </div>
         </div>
       </div>
-      <div class="space-y-4">
-        <div class="grad-card rounded-2xl border border-white/10 p-5">
-          <p class="text-slate-300 text-sm">Email</p>
-          <a href="mailto:Kodsayash@gmail.com" class="font-semibold block mt-1">Kodsayash@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-end justify-between gap-6">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Our Services</h2>
+        <a href="#contact" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-white/15 hover:bg-white/20 transition">
+          Book a Free Visit
+        </a>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card rounded-2xl p-6">
+          <div class="text-3xl">🔌</div>
+          <div class="mt-3 font-semibold text-lg">On-Grid Solar System Installation</div>
+          <p class="mt-2 text-white/80 text-sm">High-efficiency grid-tied solar systems for homes, offices, industries, and institutions.</p>
         </div>
-        <div class="grad-card rounded-2xl border border-white/10 p-5">
-          <p class="text-slate-300 text-sm">Phone</p>
-          <a href="tel:+917999882566" class="font-semibold block mt-1">+91 7999882566</a>
+
+        <div class="card rounded-2xl p-6">
+          <div class="text-3xl">📐</div>
+          <div class="mt-3 font-semibold text-lg">Site Survey & System Design</div>
+          <p class="mt-2 text-white/80 text-sm">Technical site assessment and customized system design for maximum output.</p>
         </div>
-        <div class="grad-card rounded-2xl border border-white/10 p-5">
-          <p class="text-slate-300 text-sm">Location</p>
-          <p class="font-semibold mt-1">Indore, India</p>
+
+        <div class="card rounded-2xl p-6">
+          <div class="text-3xl">🧾</div>
+          <div class="mt-3 font-semibold text-lg">Government Subsidy Assistance</div>
+          <p class="mt-2 text-white/80 text-sm">Help in availing MNRE-approved subsidies and net-metering documentation.</p>
+        </div>
+
+        <div class="card rounded-2xl p-6">
+          <div class="text-3xl">🛠️</div>
+          <div class="mt-3 font-semibold text-lg">Solar Panel Supply & Mounting</div>
+          <p class="mt-2 text-white/80 text-sm">Premium solar panels, inverters, and mounting structures from trusted manufacturers.</p>
+        </div>
+
+        <div class="card rounded-2xl p-6">
+          <div class="text-3xl">✅</div>
+          <div class="mt-3 font-semibold text-lg">System Commissioning & AMC</div>
+          <p class="mt-2 text-white/80 text-sm">Timely commissioning and post-installation support with Annual Maintenance Contracts.</p>
+        </div>
+
+        <div class="card rounded-2xl p-6">
+          <div class="text-3xl">🧰</div>
+          <div class="mt-3 font-semibold text-lg">After-Sales Support</div>
+          <p class="mt-2 text-white/80 text-sm">Reliable support, performance checks, and quick issue resolution.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-2xl md:text-3xl font-bold">Professional Experience</h2>
-      <span class="pill px-3 py-1 bg-white/10 border border-white/10 text-slate-300 text-sm">March 2024 – Present</span>
+  <!-- Why Choose Us -->
+  <section id="why" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-extrabold">Why Choose Us?</h2>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-emerald-400/10 border border-emerald-400/25">
+          <div class="text-2xl">✅</div>
+          <div class="mt-2 font-semibold">Experienced Solar Professionals</div>
+          <p class="mt-1 text-white/80 text-sm">Trained engineers with years of on-ground experience.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-sky-400/10 border border-sky-400/25">
+          <div class="text-2xl">✅</div>
+          <div class="mt-2 font-semibold">High-Quality Equipment</div>
+          <p class="mt-1 text-white/80 text-sm">Tier-1 panels, reliable inverters, and robust structures.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-yellow-400/10 border border-yellow-400/25">
+          <div class="text-2xl">✅</div>
+          <div class="mt-2 font-semibold">End-to-End Project Execution</div>
+          <p class="mt-1 text-white/80 text-sm">From survey to commissioning and documentation.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-teal-400/10 border border-teal-400/25">
+          <div class="text-2xl">✅</div>
+          <div class="mt-2 font-semibold">Competitive Pricing</div>
+          <p class="mt-1 text-white/80 text-sm">Transparent quotes and the best value for money.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-indigo-400/10 border border-indigo-400/25">
+          <div class="text-2xl">✅</div>
+          <div class="mt-2 font-semibold">Fast Installation & Reliable Support</div>
+          <p class="mt-1 text-white/80 text-sm">Quick turnaround times and responsive service.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-lime-400/10 border border-lime-400/25">
+          <div class="text-2xl">✅</div>
+          <div class="mt-2 font-semibold">MNRE & DISCOM Approved Vendor</div>
+          <p class="mt-1 text-white/80 text-sm">Compliance-ready and subsidy assistance.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="grad-card rounded-3xl border border-white/10 p-6 md:p-8">
-      <div class="flex flex-wrap items-start justify-between gap-4">
+  <!-- What is On-Grid -->
+  <section id="ongrid" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <h3 class="text-xl md:text-2xl font-semibold">Oracle Fusion Consultant</h3>
-          <p class="text-slate-300">Rainbow Cons • Indore</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold">What is an On-Grid Solar System?</h2>
+          <p class="mt-4 text-white/80">
+            An on-grid solar system is connected to the utility grid. It generates solar electricity during the day, powering your appliances directly and feeding excess energy to the grid. You get credited for this power, effectively lowering your electricity bill.
+          </p>
+          <p class="mt-3 text-white/80">
+            It’s the most cost-effective and popular solar solution for urban areas with stable grid availability.
+          </p>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-400/20 grid place-items-center text-emerald-300">✓</span>
+              <span>Lowest lifetime cost per unit</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-sky-400/20 grid place-items-center text-sky-300">✓</span>
+              <span>Net metering benefits</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-yellow-400/20 grid place-items-center text-yellow-300">✓</span>
+              <span>High reliability and easy maintenance</span>
+            </div>
+          </div>
+          <a href="#contact" class="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition btn-glow">
+            Get a Quote
+          </a>
         </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill px-3 py-1 bg-pink-500/15 text-pink-300 border border-pink-400/20">Financials</span>
-          <span class="pill px-3 py-1 bg-indigo-500/15 text-indigo-300 border border-indigo-400/20">Expenses</span>
-          <span class="pill px-3 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-400/20">Integrations</span>
+        <div class="card rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Energy Flow</h3>
+          <div class="mt-5 grid grid-cols-3 gap-4 text-center">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-3xl">☀️</div>
+              <div class="mt-2 text-sm">Panels</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-3xl">🔄</div>
+              <div class="mt-2 text-sm">Inverter</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-3xl">🏠⚡</div>
+              <div class="mt-2 text-sm">Appliances</div>
+            </div>
+          </div>
+          <div class="mt-4 text-center text-sm text-white/70">
+            Excess power → Grid (Credit on bill)
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="grid md:grid-cols-2 gap-6 mt-6">
-        <details class="group grad-card rounded-2xl border border-white/10 p-5 open:shadow-inner">
-          <summary class="cursor-pointer font-semibold flex items-center justify-between">
-            Key Responsibilities
-            <span class="text-slate-300 group-open:rotate-180 transition-transform">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </span>
-          </summary>
-          <ul class="mt-4 space-y-3 text-slate-300">
-            <li>Worked on Oracle EBS R12 and Fusion Applications focusing on Financials and Expense modules.</li>
-            <li>Designed and developed BI Publisher Reports for accounting structures, chart of accounts, and interface extracts.</li>
-            <li>Created and tested APIs for journal entries and expense reports, ensuring seamless data flow between systems.</li>
-            <li>Implemented integration with third-party tools (MuleSoft) for data synchronization.</li>
-            <li>Worked on scheduled reports, bursting, templates, and data definitions in Excel/PDF format.</li>
-            <li>Involved in code migration through GitHub and Jenkins for CI/CD pipeline deployment.</li>
-            <li>Prepared technical design documents, user guides, and test cases for client deliverables.</li>
+  <!-- Savings Estimator -->
+  <section id="estimator" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Solar Savings Estimator</h2>
+          <p class="mt-3 text-white/80">
+            Get a quick idea of system size and savings. This is a simple guide; we’ll confirm during a free site survey.
+          </p>
+          <div class="mt-6 card rounded-2xl p-6">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="text-sm text-white/70">Average Monthly Bill (₹)</span>
+                <input id="billInput" type="number" min="0" placeholder="e.g., 5000" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50">
+              </label>
+              <label class="block">
+                <span class="text-sm text-white/70">Tariff per Unit (₹/kWh)</span>
+                <input id="tariffInput" type="number" min="1" step="0.1" placeholder="e.g., 7.0" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50">
+              </label>
+              <label class="block">
+                <span class="text-sm text-white/70">Usable Roof Area (sqft)</span>
+                <input id="areaInput" type="number" min="0" placeholder="e.g., 400" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50">
+              </label>
+              <label class="block">
+                <span class="text-sm text-white/70">Sunshine Hours (avg/day)</span>
+                <input id="sunInput" type="number" min="3" max="7" step="0.1" placeholder="e.g., 5.0" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50">
+              </label>
+            </div>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <button id="calcBtn" class="btn-glow px-5 py-3 rounded-xl bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition">Calculate</button>
+              <button id="resetBtn" class="px-5 py-3 rounded-xl bg-white/10 border border-white/15 hover:bg-white/20 transition">Reset</button>
+            </div>
+            <div id="result" class="mt-6 hidden">
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div class="text-xs text-white/60">Recommended Size</div>
+                  <div id="sizeOut" class="text-xl font-bold mt-1 text-yellow-300">— kW</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div class="text-xs text-white/60">Estimated Monthly Units</div>
+                  <div id="unitsOut" class="text-xl font-bold mt-1 text-yellow-300">— kWh</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div class="text-xs text-white/60">Estimated Monthly Savings</div>
+                  <div id="saveOut" class="text-xl font-bold mt-1 text-yellow-300">₹ —</div>
+                </div>
+              </div>
+              <p id="noteOut" class="mt-3 text-sm text-white/70"></p>
+            </div>
+          </div>
+          <div class="mt-4 text-xs text-white/50">
+            Assumptions: 1kW ≈ 100 sqft, 1kW ≈ 4–5 units/day depending on sunshine and system losses.
+          </div>
+        </div>
+        <div class="card rounded-2xl p-6">
+          <h3 class="font-semibold text-lg">Quick Facts</h3>
+          <ul class="mt-4 space-y-3 text-white/80">
+            <li>• Subsidy available for residential customers under MNRE</li>
+            <li>• Net metering credits excess power exported to the grid</li>
+            <li>• Typical payback: 3–5 years (varies by state and tariff)</li>
+            <li>• AMC available for long-term performance</li>
           </ul>
-        </details>
-        <div class="grad-card rounded-2xl border border-white/10 p-5">
-          <p class="text-sm text-slate-300">Highlights</p>
-          <ul class="mt-3 grid gap-2">
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              Delivered automated report bursting for finance leadership
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
-              Reduced reconciliation time via optimized SQL and data flows
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
-              Streamlined CI/CD with GitHub & Jenkins
-            </li>
-          </ul>
+          <a href="#contact" class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 border border-white/15 hover:bg-white/20 transition">
+            Talk to an Expert
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-2xl md:text-3xl font-bold">Key Projects</h2>
-      <div class="flex gap-2">
-        <button class="proj-filter pill px-3 py-1 bg-white/10 border border-white/10" data-tag="all">All</button>
-        <button class="proj-filter pill px-3 py-1 bg-white/10 border border-white/10" data-tag="Reporting">Reporting</button>
-        <button class="proj-filter pill px-3 py-1 bg-white/10 border border-white/10" data-tag="Integration">Integration</button>
-        <button class="proj-filter pill px-3 py-1 bg-white/10 border border-white/10" data-tag="Migration">Migration</button>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Project 1 -->
-      <article class="project grad-card rounded-3xl border border-white/10 p-6" data-tags="Reporting Migration">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xl font-semibold">Ricoh USA – Dealer Portal</h3>
-          <span class="pill px-3 py-1 bg-pink-500/15 text-pink-300 border border-pink-400/20 text-xs">Reporting</span>
-        </div>
-        <p class="text-slate-300 mt-3">Enhanced reporting in Oracle Financials (EBS R12). Built custom BI Publisher reports, optimized SQL, and migrated reports into Fusion modules.</p>
-        <button class="btn mt-4 pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 view-details" data-title="Ricoh USA – Dealer Portal" data-details="Enhanced Oracle Financials reporting with custom BI Publisher layouts, burst schedules, and optimized SQL for faster close cycles. Migrated assets to Fusion with validation checks.">View details</button>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project grad-card rounded-3xl border border-white/10 p-6" data-tags="Migration Reporting">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xl font-semibold">Arrow Electronics (UK) – R12</h3>
-          <span class="pill px-3 py-1 bg-indigo-500/15 text-indigo-300 border border-indigo-400/20 text-xs">Migration</span>
-        </div>
-        <p class="text-slate-300 mt-3">Implemented data migration scripts and financial reports in EBS R12. Supported testing and user training for finance modules.</p>
-        <button class="btn mt-4 pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 view-details" data-title="Arrow Electronics (UK) – R12" data-details="Developed robust migration procedures with reconciliation steps; delivered training materials and hands-on sessions for finance teams.">View details</button>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project grad-card rounded-3xl border border-white/10 p-6" data-tags="Integration Reporting">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xl font-semibold">Oracle Cloud Integration – BREX</h3>
-          <span class="pill px-3 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-400/20 text-xs">Integration</span>
-        </div>
-        <p class="text-slate-300 mt-3">Integrated Brex with Oracle Cloud GL & Expenses using MuleSoft. Built reports for chart of accounts and journal structures; implemented journal/expense APIs.</p>
-        <button class="btn mt-4 pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 view-details" data-title="Oracle Cloud Integration – BREX" data-details="End-to-end MuleSoft integration for GL & Expenses; report packs for chart of accounts; automated journal posting and expense submission flows.">View details</button>
-      </article>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6">Technical Skills</h2>
-
-    <div class="grid lg:grid-cols-3 gap-6">
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold mb-3">ERP Tools</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Oracle Fusion</span>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Oracle EBS R12</span>
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Client Testimonials</h2>
+        <div class="flex items-center gap-2">
+          <button id="prevTest" class="p-2 rounded-lg bg-white/10 border border-white/10 hover:bg-white/20" aria-label="Previous">‹</button>
+          <button id="nextTest" class="p-2 rounded-lg bg-white/10 border border-white/10 hover:bg-white/20" aria-label="Next">›</button>
         </div>
       </div>
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold mb-3">Languages & DB</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">SQL</span>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">PL/SQL</span>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Java (basics)</span>
+      <div class="mt-8 card rounded-2xl p-6">
+        <div id="testSlide" class="transition-all">
+          <blockquote class="text-lg md:text-xl leading-relaxed">"Suryadoot helped us install a 10kW on-grid system for our factory. The savings on power bills are incredible!"</blockquote>
+          <div class="mt-4 text-white/70">– Rajesh M., Indore</div>
         </div>
-      </div>
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold mb-3">Reporting</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">BI Publisher</span>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">XML Publisher</span>
-        </div>
-      </div>
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold mb-3">Integration</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">MuleSoft</span>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">REST APIs</span>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">SOAP APIs</span>
-        </div>
-      </div>
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold mb-3">Version Control & CI/CD</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Git & GitHub</span>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Jenkins</span>
-        </div>
-      </div>
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold mb-3">Other</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Excel</span>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Data Migration</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6">Education</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xl font-semibold">Master of Computer Applications (MCA)</h3>
-          <span class="pill px-3 py-1 bg-white/10 border border-white/10 text-sm">2024 – 2026</span>
-        </div>
-        <p class="text-slate-300 mt-1">Specialization: AI/ML</p>
-        <p class="mt-2">Oriental University • Indore</p>
-      </div>
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="text-xl font-semibold">Bachelor of Commerce (B.Com)</h3>
-        <p class="text-slate-300 mt-1">Rani Durgavati Vishwavidyalaya (RDVV)</p>
-        <p class="mt-2">Jabalpur</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements -->
-  <section class="max-w-6xl mx-auto px-5 py-16 md:py-20">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6">Certifications & Achievements</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold">Oracle BI Publisher</h3>
-        <p class="text-slate-300 mt-2">Hands-on expertise across layouts, data models, and bursting.</p>
-      </div>
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold">End-to-End Reporting</h3>
-        <p class="text-slate-300 mt-2">Report development, data definitions, and distribution.</p>
-      </div>
-      <div class="grad-card rounded-3xl border border-white/10 p-6">
-        <h3 class="font-semibold">Knowledge Sharing</h3>
-        <p class="text-slate-300 mt-2">Contributed to internal KT sessions and documentation.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
-    <div class="grad-card rounded-3xl border border-white/10 p-8 md:p-10">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+  <section id="contact" class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold">Let’s Connect</h2>
-          <p class="text-slate-300 mt-2">Reach out for consulting, integrations, or reporting work.</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Get in Touch</h2>
+          <p class="mt-3 text-white/80">Ready to go solar? Book a free site visit today.</p>
+          <div class="mt-6 space-y-3">
+            <a href="tel:+91XXXXXXXXXX" class="block p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition">📱 Call Us: +91-XXXXXXXXXX</a>
+            <a href="mailto:info@suryadootenergy.com" class="block p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition">📧 Email: info@suryadootenergy.com</a>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              📍 Location: [Your Office Address]
+            </div>
+          </div>
+          <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-xl font-bold text-yellow-300">Free</div>
+              <div class="text-xs text-white/70">Site Visit</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-xl font-bold text-yellow-300">25-Year</div>
+              <div class="text-xs text-white/70">Panel Warranty</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-xl font-bold text-yellow-300">Day One</div>
+              <div class="text-xs text-white/70">Savings</div>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-wrap gap-3">
-          <a href="mailto:Kodsayash@gmail.com" class="btn pill px-5 py-3 font-semibold bg-gradient-to-r from-pink-500 to-indigo-500 text-white">Email</a>
-          <a href="tel:+917999882566" class="btn pill px-5 py-3 font-semibold bg-white/10 hover:bg-white/20 border border-white/10">Call</a>
-          <a href="https://linkedin.com/in/yashraj-patel-812bb7299" target="_blank" rel="noopener" class="btn pill px-5 py-3 font-semibold bg-white/10 hover:bg-white/20 border border-white/10">LinkedIn</a>
+        <div>
+          <div class="card rounded-2xl p-6">
+            <div class="mb-3 text-xs text-amber-300 bg-amber-300/10 border border-amber-300/30 px-3 py-2 rounded-lg">
+              Demo notice: This form shows a success message only. It does not send emails. For real inquiries, please call or email.
+            </div>
+            <form id="contactForm" class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="text-sm text-white/70">Full Name</span>
+                  <input required type="text" placeholder="Your name" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50">
+                </label>
+                <label class="block">
+                  <span class="text-sm text-white/70">Phone</span>
+                  <input required type="tel" placeholder="Your phone" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50">
+                </label>
+              </div>
+              <label class="block">
+                <span class="text-sm text-white/70">Email</span>
+                <input type="email" placeholder="you@example.com" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50">
+              </label>
+              <label class="block">
+                <span class="text-sm text-white/70">City / Address</span>
+                <input type="text" placeholder="Your location" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50">
+              </label>
+              <label class="block">
+                <span class="text-sm text-white/70">Message</span>
+                <textarea rows="4" placeholder="Tell us about your requirement" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:ring-2 focus:ring-yellow-400/50"></textarea>
+              </label>
+              <div class="flex items-center gap-3">
+                <button type="submit" class="btn-glow px-6 py-3 rounded-xl bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition">Send Inquiry</button>
+                <button type="button" id="clearForm" class="px-6 py-3 rounded-xl bg-white/10 border border-white/15 hover:bg-white/20 transition">Clear</button>
+              </div>
+              <div id="formSuccess" class="hidden mt-4 p-4 rounded-xl bg-emerald-400/10 border border-emerald-400/25 text-emerald-200">
+                Thank you! We’ve received your details. Our team will reach out shortly.
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="max-w-6xl mx-auto px-5 pb-10">
-    <div class="rounded-3xl glass border border-white/10 px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-      <p class="text-slate-300 text-sm">© <span id="year"></span> Yashraj Patel. All rights reserved.</p>
-      <div class="flex items-center gap-3">
-        <a href="mailto:Kodsayash@gmail.com" class="pill px-3 py-1 bg-white/10 border border-white/10 text-sm">Email</a>
-        <a href="https://github.com/Kodsayash" target="_blank" rel="noopener" class="pill px-3 py-1 bg-white/10 border border-white/10 text-sm">GitHub</a>
-        <a href="https://linkedin.com/in/yashraj-patel-812bb7299" target="_blank" rel="noopener" class="pill px-3 py-1 bg-white/10 border border-white/10 text-sm">LinkedIn</a>
+  <footer class="pt-12 pb-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-2">
+            <svg class="w-7 h-7 text-yellow-300" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"></circle></svg>
+            <span class="font-bold">Suryadoot Energy</span>
+          </div>
+          <p class="mt-3 text-white/70 text-sm">
+            Clean energy solutions for homes, businesses, and industries. Powering the future with the sun.
+          </p>
+        </div>
+        <div>
+          <div class="font-semibold">Quick Links</div>
+          <ul class="mt-3 space-y-2 text-white/80 text-sm">
+            <li><a href="#services" class="hover:text-white">Services</a></li>
+            <li><a href="#why" class="hover:text-white">Why Us</a></li>
+            <li><a href="#estimator" class="hover:text-white">Estimator</a></li>
+            <li><a href="#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold">Contact</div>
+          <ul class="mt-3 space-y-2 text-white/80 text-sm">
+            <li>📱 +91-XXXXXXXXXX</li>
+            <li>📧 info@suryadootenergy.com</li>
+            <li>📍 [Your Office Address]</li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold">More</div>
+          <ul class="mt-3 space-y-2 text-white/80 text-sm">
+            <li><a href="https://suryadootenergy.github.io/" target="_blank" rel="noopener" class="hover:text-white">suryadootenergy.github.io</a></li>
+            <li>© <span id="year"></span> Suryadoot Energy Solution</li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Modal -->
-  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-5">
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative max-w-lg w-full grad-card rounded-3xl border border-white/10 p-6">
-      <div class="flex items-start justify-between gap-4">
-        <h3 id="modalTitle" class="text-xl font-semibold">Project Title</h3>
-        <button id="modalClose" class="btn rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </button>
-      </div>
-      <p id="modalContent" class="text-slate-300 mt-3">Details...</p>
-    </div>
-  </div>
-
-  <!-- Toast -->
-  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden">
-    <div class="pill px-4 py-2 bg-emerald-500 text-emerald-950 font-semibold shadow-lg">Copied to clipboard!</div>
-  </div>
+  <!-- Back to top -->
+  <button id="toTop" class="fixed bottom-6 right-6 p-3 rounded-full bg-yellow-400 text-black font-bold shadow-xl hover:bg-yellow-300 transition hidden" aria-label="Back to top">↑</button>
 
   <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    if (menuBtn) {
-      menuBtn.addEventListener('click', () => {
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
     }
-    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-    // Theme toggle (persisted)
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const root = document.documentElement;
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      document.body.classList.remove('text-slate-100');
-      document.body.classList.add('text-slate-800');
-      document.body.style.background = '#F8FAFC';
+    // Savings Estimator logic
+    const billInput = document.getElementById('billInput');
+    const tariffInput = document.getElementById('tariffInput');
+    const areaInput = document.getElementById('areaInput');
+    const sunInput = document.getElementById('sunInput');
+    const calcBtn = document.getElementById('calcBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const result = document.getElementById('result');
+    const sizeOut = document.getElementById('sizeOut');
+    const unitsOut = document.getElementById('unitsOut');
+    const saveOut = document.getElementById('saveOut');
+    const noteOut = document.getElementById('noteOut');
+
+    function formatINR(num) {
+      return num.toLocaleString('en-IN', { maximumFractionDigits: 0 });
     }
-    function setLight(on) {
-      if (on) {
-        document.body.classList.remove('text-slate-100');
-        document.body.classList.add('text-slate-800');
-        document.body.style.background = '#F8FAFC';
-        localStorage.setItem('theme', 'light');
-        themeIcon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-amber-500"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+
+    calcBtn.addEventListener('click', () => {
+      const bill = parseFloat(billInput.value);
+      const tariff = parseFloat(tariffInput.value);
+      const area = parseFloat(areaInput.value);
+      const sun = parseFloat(sunInput.value);
+
+      if ([bill, tariff, area, sun].some(v => isNaN(v) || v <= 0)) {
+        result.classList.remove('hidden');
+        sizeOut.textContent = '— kW';
+        unitsOut.textContent = '— kWh';
+        saveOut.textContent = '₹ —';
+        noteOut.textContent = 'Please fill all fields with valid numbers.';
+        return;
+      }
+
+      const monthlyUnits = bill / tariff; // units consumed per month
+      const dailyUnits = monthlyUnits / 30;
+      const sysKWFromLoad = dailyUnits / Math.max(sun, 1) / 0.8; // assume 80% system efficiency
+      const sysKWFromArea = Math.max(0.5, (area / 100)); // 1kW ≈ 100 sqft
+      const recommendedKW = Math.min(Math.max(sysKWFromLoad, 1), sysKWFromArea); // bounded by roof area
+
+      // Production estimate
+      const dailyProd = recommendedKW * Math.max(sun, 1) * 0.8;
+      const monthlyProd = dailyProd * 30;
+      const monthlySavings = Math.min(monthlyProd, monthlyUnits) * tariff;
+
+      sizeOut.textContent = recommendedKW.toFixed(1) + ' kW';
+      unitsOut.textContent = Math.round(monthlyProd).toLocaleString('en-IN') + ' kWh';
+      saveOut.textContent = '₹ ' + formatINR(monthlySavings);
+
+      let note = 'Estimated values. Actual sizing depends on your roof, location, and load profile.';
+      if (sysKWFromArea < sysKWFromLoad) {
+        note += ' Your roof area may limit the system size.';
+      }
+      noteOut.textContent = note;
+
+      result.classList.remove('hidden');
+    });
+
+    resetBtn.addEventListener('click', () => {
+      [billInput, tariffInput, areaInput, sunInput].forEach(i => i.value = '');
+      result.classList.add('hidden');
+    });
+
+    // Testimonials simple slider
+    const testimonials = [
+      { quote: 'Suryadoot helped us install a 10kW on-grid system for our factory. The savings on power bills are incredible!', by: '– Rajesh M., Indore' },
+      { quote: 'Professional, fast, and knowledgeable team. Highly recommended for solar rooftop projects.', by: '– Priya T., Bhopal' },
+      { quote: 'Smooth process end-to-end. The subsidy guidance was especially helpful.', by: '– Ananya S., Ujjain' },
+    ];
+    let tIndex = 0;
+    const testSlide = document.getElementById('testSlide');
+    document.getElementById('prevTest').addEventListener('click', () => {
+      tIndex = (tIndex - 1 + testimonials.length) % testimonials.length;
+      updateTestimonial();
+    });
+    document.getElementById('nextTest').addEventListener('click', () => {
+      tIndex = (tIndex + 1) % testimonials.length;
+      updateTestimonial();
+    });
+    function updateTestimonial() {
+      const t = testimonials[tIndex];
+      testSlide.innerHTML = `
+        <blockquote class="text-lg md:text-xl leading-relaxed">"${t.quote}"</blockquote>
+        <div class="mt-4 text-white/70">${t.by}</div>
+      `;
+    }
+
+    // Contact form demo behavior
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const clearFormBtn = document.getElementById('clearForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formSuccess.classList.remove('hidden');
+      contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    clearFormBtn.addEventListener('click', () => {
+      contactForm.reset();
+      formSuccess.classList.add('hidden');
+    });
+
+    // Back to top button
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        toTop.classList.remove('hidden');
       } else {
-        document.body.classList.remove('text-slate-800');
-        document.body.classList.add('text-slate-100');
-        document.body.style.background = '';
-        localStorage.setItem('theme', 'dark');
-        themeIcon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-yellow-300"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="1.5"/></svg>';
-      }
-    }
-    themeToggle?.addEventListener('click', () => {
-      const isLight = localStorage.getItem('theme') === 'light';
-      setLight(!isLight);
-    });
-
-    // Copy to clipboard
-    const toast = document.getElementById('toast');
-    function showToast(msg='Copied to clipboard!') {
-      toast.querySelector('div').textContent = msg;
-      toast.classList.remove('hidden');
-      clearTimeout(showToast._t);
-      showToast._t = setTimeout(() => toast.classList.add('hidden'), 1400);
-    }
-    document.querySelectorAll('.copy').forEach(btn => {
-      btn.addEventListener('click', async () => {
-        const text = btn.getAttribute('data-copy') || '';
-        try {
-          await navigator.clipboard.writeText(text);
-          showToast('Copied: ' + text);
-        } catch(e) {
-          showToast('Copy not supported here');
-        }
-      });
-    });
-
-    // Projects filter
-    const filters = document.querySelectorAll('.proj-filter');
-    const projects = document.querySelectorAll('.project');
-    function applyFilter(tag) {
-      filters.forEach(f => f.classList.remove('ring-brand'));
-      const active = Array.from(filters).find(f => f.dataset.tag === tag);
-      active?.classList.add('ring-brand');
-      projects.forEach(card => {
-        const tags = (card.dataset.tags || '').split(' ');
-        const show = tag === 'all' || tags.includes(tag);
-        card.style.display = show ? '' : 'none';
-      });
-    }
-    filters.forEach(f => f.addEventListener('click', () => applyFilter(f.dataset.tag)));
-    applyFilter('all');
-
-    // Modal controls
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalContent = document.getElementById('modalContent');
-    const modalClose = document.getElementById('modalClose');
-    document.querySelectorAll('.view-details').forEach(btn => {
-      btn.addEventListener('click', () => {
-        modalTitle.textContent = btn.getAttribute('data-title') || 'Project';
-        modalContent.textContent = btn.getAttribute('data-details') || '';
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      });
-    });
-    modalClose?.addEventListener('click', () => {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    });
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal.firstElementChild) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
+        toTop.classList.add('hidden');
       }
     });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // "Download Resume" - opens print dialog for easy PDF save
-    document.getElementById('downloadResume')?.addEventListener('click', () => {
-      window.print();
-    });
-
-    // Keyboard escape to close modal
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      }
-    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'972c6decf779484d',t:'MTc1NTgwMzQxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'972c9dd3f62f3d5a',t:'MTc1NTgwNTM3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
