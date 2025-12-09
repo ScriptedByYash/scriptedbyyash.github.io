@@ -2,72 +2,533 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Under Maintenance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yashraj Patel • Oracle Fusion Technical Consultant</title>
+  <meta name="description" content="Portfolio of Yashraj Patel — Oracle Fusion Consultant specializing in BI Publisher, OTBI, SQL/PLSQL, Finance & SCM modules." />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0078d7, #00b7ff);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .container {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      max-width: 500px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    .loader {
-      border: 6px solid rgba(255, 255, 255, 0.3);
-      border-top: 6px solid #fff;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    footer {
-      font-size: 0.9em;
-      opacity: 0.8;
-      margin-top: 20px;
-    }
+    :root { --brand: 255 115 179; --ink: 19 23 34; --paper: 248 250 252; }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.08); }
+    .grad-hero { background: radial-gradient(1200px 600px at 10% -10%, rgba(99,102,241,.35), transparent 60%), radial-gradient(900px 500px at 110% 10%, rgba(236,72,153,.35), transparent 50%), linear-gradient(180deg, #0B1020 0%, #0E1327 100%); }
+    .grad-card { background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04)); }
+    .ring-brand { box-shadow: 0 0 0 3px rgba(236,72,153,.25); }
+    .tag { transition: transform .15s ease, background-color .2s ease; }
+    .tag:hover { transform: translateY(-1px); }
+    .shine { position: relative; overflow: hidden; }
+    .shine:before { content:""; position:absolute; inset:-150% -50%; background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,.15), transparent 60%); transform: rotate(8deg); animation: shine 6s linear infinite; }
+    @keyframes shine { 0%{ transform: translateX(-60%) rotate(8deg);} 100%{ transform: translateX(60%) rotate(8deg);} }
+    .btn { transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .fade-in { animation: fade .6s ease both; }
+    @keyframes fade { from{opacity:0; transform: translateY(6px);} to{opacity:1; transform: translateY(0);} }
+    .pill { border-radius: 999px; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>🚧 We’re Updating Our Website!</h1>
-    <p>Our site is currently undergoing scheduled maintenance.</p>
-    <div class="loader"></div>
-    <p>We’ll be back shortly. Thank you for your patience!</p>
-    <footer>© <span id="year"></span> Yashraj Patel </footer>
+<body class="bg-[#0B1020] text-slate-100 font-[Outfit] selection:bg-pink-500/30 selection:text-white">
+  <!-- Top Gradient Aura -->
+  <div class="pointer-events-none fixed -top-24 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] rounded-full blur-3xl opacity-25" style="background: radial-gradient(closest-side, rgba(99,102,241,.35), transparent);"></div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40">
+    <nav class="max-w-6xl mx-auto px-5 py-4">
+      <div class="flex items-center justify-between rounded-2xl glass border border-white/10 px-5 py-3">
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-pink-500 grid place-items-center text-white font-extrabold">
+            Y
+          </div>
+          <div class="leading-5">
+            <p class="font-semibold">Yashraj Patel</p>
+            <p class="text-xs text-slate-300/80">Oracle Fusion Consultant</p>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="#about" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">About</a>
+          <a href="#experience" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Experience</a>
+          <a href="#projects" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Projects</a>
+          <a href="#skills" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Skills</a>
+          <a href="#education" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Education</a>
+          <a href="#contact" class="px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" aria-label="Toggle theme" class="btn rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20">
+            <span class="inline-block" id="themeIcon">
+              <!-- Moon Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-yellow-300">
+                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </span>
+          </button>
+          <a href="mailto:yashraj.patel.in@gmail.com" class="btn hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-indigo-500 text-white shadow-lg shadow-pink-500/20 hover:shadow-pink-500/30">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="white" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="white" stroke-width="1.5"/></svg>
+            Contact
+          </a>
+          <button id="menuBtn" class="md:hidden btn rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20" aria-label="Open menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="text-white"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="md:hidden mt-2 hidden rounded-2xl glass border border-white/10 p-2">
+        <a href="#about" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">About</a>
+        <a href="#experience" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Experience</a>
+        <a href="#projects" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Projects</a>
+        <a href="#skills" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Skills</a>
+        <a href="#education" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Education</a>
+        <a href="#contact" class="block px-3 py-2 rounded-lg text-slate-200 hover:bg-white/10">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="grad-hero">
+    <div class="max-w-6xl mx-auto px-5 pt-14 pb-20 md:pt-20 md:pb-28">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="space-y-6 fade-in">
+          <div class="inline-flex items-center gap-2 pill bg-white/10 px-3 py-1 text-xs text-slate-200 border border-white/10">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Open to opportunities
+          </div>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            Yashraj Patel
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-indigo-400">Oracle Fusion Consultant</span>
+          </h1>
+          <p class="text-slate-300/90 leading-relaxed">
+            Motivated and detail-oriented postgraduate seeking an entry-level opportunity in Oracle Fusion Applications. I possess hands-on experience in BI Publisher, OTBI, and SQL/PLSQL, with a focus on Finance and SCM module implementations.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#projects" class="btn shine pill bg-gradient-to-r from-pink-500 to-indigo-500 text-white px-5 py-3 font-semibold">See My Work</a>
+            <button id="downloadResume" class="btn pill px-5 py-3 font-semibold bg-white/10 hover:bg-white/20 border border-white/10 text-white">Download Resume</button>
+            <a href="mailto:yashraj.patel.in@gmail.com" class="btn pill px-5 py-3 font-semibold bg-emerald-500/90 hover:bg-emerald-500 text-emerald-950">
+              Email Me
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="https://linkedin.com/in/yashraj-patel-812bb7299" target="_blank" rel="noopener" class="pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 10v7M8 7v.01M12 17v-4a3 3 0 016 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://scriptedbyyash.github.io/" target="_blank" rel="noopener" class="pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-2">
+              <!-- Globe Icon for Portfolio -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Portfolio
+            </a>
+            <button data-copy="+919302613759" class="copy pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-2" aria-label="Copy phone">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 3h8a2 2 0 012 2v12a2 2 0 01-2 2H8" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="7" width="8" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+              Copy Phone
+            </button>
+            <button data-copy="yashraj.patel.in@gmail.com" class="copy pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 flex items-center gap-2" aria-label="Copy email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5"/></svg>
+              Copy Email
+            </button>
+          </div>
+        </div>
+        <div class="relative fade-in">
+          <div class="absolute -inset-1 bg-gradient-to-tr from-indigo-500/40 to-pink-500/40 rounded-3xl blur-2xl"></div>
+          <div class="relative grad-card rounded-3xl border border-white/10 p-6 md:p-8">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-2xl p-4 bg-white/5 border border-white/10">
+                <p class="text-sm text-slate-300">Modules</p>
+                <p class="mt-1 font-semibold">Finance & SCM (P2P)</p>
+              </div>
+              <div class="rounded-2xl p-4 bg-white/5 border border-white/10">
+                <p class="text-sm text-slate-300">Environment</p>
+                <p class="mt-1 font-semibold">Oracle Fusion Cloud</p>
+              </div>
+              <div class="rounded-2xl p-4 bg-white/5 border border-white/10">
+                <p class="text-sm text-slate-300">Reporting</p>
+                <p class="mt-1 font-semibold">BI Publisher & OTBI</p>
+              </div>
+              <div class="rounded-2xl p-4 bg-white/5 border border-white/10">
+                <p class="text-sm text-slate-300">Integration</p>
+                <p class="mt-1 font-semibold">REST API & FBDI</p>
+              </div>
+            </div>
+            <div class="mt-6 rounded-2xl bg-white/5 border border-white/10 p-5">
+              <p class="text-sm text-slate-300">Core Focus</p>
+              <ul class="mt-2 grid grid-cols-2 gap-2">
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span> Report Customization</li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Data Migration</li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span> SQL / PLSQL</li>
+                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> API Testing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Professional Summary</h2>
+        <div class="grad-card rounded-3xl border border-white/10 p-6 md:p-8">
+          <p class="text-slate-300 leading-relaxed">
+            Motivated and detail-oriented postgraduate with strong analytical and problem-solving skills, seeking an entry-level opportunity in Oracle Fusion Applications. I possess hands-on experience in BI Publisher report customization for Finance and SCM modules, SQL/PLSQL, and Oracle Fusion Cloud implementations. I am eager to contribute to system enhancement, Finance & SCM report development, and process automation in a dynamic organization.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="tag pill px-3 py-1 bg-pink-500/15 text-pink-300 border border-pink-400/20">Oracle Fusion</span>
+            <span class="tag pill px-3 py-1 bg-indigo-500/15 text-indigo-300 border border-indigo-400/20">Procure to Pay (P2P)</span>
+            <span class="tag pill px-3 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-400/20">BI Publisher</span>
+            <span class="tag pill px-3 py-1 bg-fuchsia-500/15 text-fuchsia-300 border border-fuchsia-400/20">OTBI</span>
+            <span class="tag pill px-3 py-1 bg-cyan-500/15 text-cyan-300 border border-cyan-400/20">Postman</span>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="grad-card rounded-2xl border border-white/10 p-5">
+          <p class="text-slate-300 text-sm">Email</p>
+          <a href="mailto:yashraj.patel.in@gmail.com" class="font-semibold block mt-1 break-all">yashraj.patel.in@gmail.com</a>
+        </div>
+        <div class="grad-card rounded-2xl border border-white/10 p-5">
+          <p class="text-slate-300 text-sm">Phone</p>
+          <a href="tel:+919302613759" class="font-semibold block mt-1">+91 9302613759</a>
+        </div>
+        <div class="grad-card rounded-2xl border border-white/10 p-5">
+          <p class="text-slate-300 text-sm">Location</p>
+          <p class="font-semibold mt-1">Indore, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold">Professional Experience</h2>
+      <span class="pill px-3 py-1 bg-white/10 border border-white/10 text-slate-300 text-sm">Sept 2025 – Present</span>
+    </div>
+
+    <div class="grad-card rounded-3xl border border-white/10 p-6 md:p-8">
+      <div class="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h3 class="text-xl md:text-2xl font-semibold">Oracle Fusion Intern</h3>
+          <p class="text-slate-300">Consster</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill px-3 py-1 bg-pink-500/15 text-pink-300 border border-pink-400/20">P2P Cycle</span>
+          <span class="pill px-3 py-1 bg-indigo-500/15 text-indigo-300 border border-indigo-400/20">Finance (AP/AR/GL)</span>
+          <span class="pill px-3 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-400/20">SCM (Inv/PO)</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <details class="group grad-card rounded-2xl border border-white/10 p-5 open:shadow-inner" open>
+          <summary class="cursor-pointer font-semibold flex items-center justify-between">
+            Key Responsibilities
+            <span class="text-slate-300 group-open:rotate-180 transition-transform">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+          </summary>
+          <ul class="mt-4 space-y-3 text-slate-300 list-disc list-inside">
+            <li>Hands-on exposure to Oracle Fusion Cloud Applications focusing on Procure to Pay (P2P), Finance, and Supply Chain Management (SCM).</li>
+            <li>Customization and development of BI Publisher and OTBI reports for Finance (AP/AR/GL) and SCM (Inventory/PO) modules.</li>
+            <li>Supporting FBDI data import processes and report data validation.</li>
+            <li>Working on REST API integration and testing using Postman.</li>
+            <li>Assisting in report migration, troubleshooting, and documentation under senior consultants.</li>
+            <li>Understanding business flows of standard Fusion modules and developing technical & functional skills.</li>
+          </ul>
+        </details>
+        <div class="grad-card rounded-2xl border border-white/10 p-5">
+          <p class="text-sm text-slate-300">Key Learnings</p>
+          <ul class="mt-3 grid gap-2">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Fusion Data Models & Parameters
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+              Layout Customization (BIP)
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+              REST API Testing (Postman)
+            </li>
+             <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-400"></span>
+              FBDI Data Import
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold">Projects & Assignments</h2>
+      <div class="flex gap-2">
+        <button class="proj-filter pill px-3 py-1 bg-white/10 border border-white/10" data-tag="all">All</button>
+        <button class="proj-filter pill px-3 py-1 bg-white/10 border border-white/10" data-tag="Reporting">Reporting</button>
+        <button class="proj-filter pill px-3 py-1 bg-white/10 border border-white/10" data-tag="Migration">Migration</button>
+        <button class="proj-filter pill px-3 py-1 bg-white/10 border border-white/10" data-tag="Integration">Integration</button>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Project 1 -->
+      <article class="project grad-card rounded-3xl border border-white/10 p-6" data-tags="Reporting">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold">Finance & SCM Reports</h3>
+          <span class="pill px-3 py-1 bg-pink-500/15 text-pink-300 border border-pink-400/20 text-xs">Reporting</span>
+        </div>
+        <p class="text-slate-300 mt-3">Developed and customized BI Publisher and OTBI reports for Accounts Payable, Receivable, GL, and Inventory modules.</p>
+        <button class="btn mt-4 pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 view-details" data-title="Finance & SCM Reports" data-details="Designed layouts and data models to meet business requirements. Handled parameters and data validation for AP/AR/GL/PO/Inventory reports, ensuring accurate financial and supply chain data visualization.">View details</button>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project grad-card rounded-3xl border border-white/10 p-6" data-tags="Migration">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold">Data Migration (FBDI)</h3>
+          <span class="pill px-3 py-1 bg-indigo-500/15 text-indigo-300 border border-indigo-400/20 text-xs">Migration</span>
+        </div>
+        <p class="text-slate-300 mt-3">Supported data import processes using File-Based Data Import (FBDI) for bulk data migration into Fusion Cloud.</p>
+        <button class="btn mt-4 pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 view-details" data-title="Data Migration (FBDI)" data-details="Assisted in preparing FBDI templates, validating data, and running import jobs. Troubleshooted errors during the import process to ensure data integrity within the Fusion environment.">View details</button>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project grad-card rounded-3xl border border-white/10 p-6" data-tags="Integration">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold">API Integration Testing</h3>
+          <span class="pill px-3 py-1 bg-emerald-500/15 text-emerald-300 border border-emerald-400/20 text-xs">Integration</span>
+        </div>
+        <p class="text-slate-300 mt-3">Performed integration testing using REST APIs and Postman to verify data exchange between systems.</p>
+        <button class="btn mt-4 pill px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 view-details" data-title="API Integration Testing" data-details="Utilized Postman to send requests and analyze responses for standard Oracle Fusion REST APIs. Validated endpoints for data synchronization and supported troubleshooting of integration issues.">View details</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Technical Skills</h2>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="grad-card rounded-3xl border border-white/10 p-6">
+        <h3 class="font-semibold mb-3">Oracle Fusion</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">BI Publisher</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">OTBI</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">FBDI</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">P2P Cycle</span>
+        </div>
+      </div>
+      <div class="grad-card rounded-3xl border border-white/10 p-6">
+        <h3 class="font-semibold mb-3">Languages & DB</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">SQL</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">PL/SQL</span>
+        </div>
+      </div>
+      <div class="grad-card rounded-3xl border border-white/10 p-6">
+        <h3 class="font-semibold mb-3">Tools & DevOps</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Postman</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">GitHub</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Jenkins</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Jira</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">BitBucket</span>
+        </div>
+      </div>
+      <div class="grad-card rounded-3xl border border-white/10 p-6">
+        <h3 class="font-semibold mb-3">Other</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Excel Automation</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Data Migration</span>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10">Documentation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">Education</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="grad-card rounded-3xl border border-white/10 p-6">
+        <div class="flex items-center justify-between">
+          <h3 class="text-xl font-semibold">Master of Computer Applications (MCA)</h3>
+          <span class="pill px-3 py-1 bg-white/10 border border-white/10 text-sm">2023 – 2025</span>
+        </div>
+        <p class="text-slate-300 mt-1">Specialization: AI/ML</p>
+        <p class="mt-2">Oriental University • Indore</p>
+      </div>
+      <div class="grad-card rounded-3xl border border-white/10 p-6">
+        <h3 class="text-xl font-semibold">Bachelor of Commerce (B.Com)</h3>
+        <p class="text-slate-300 mt-1">Rani Durgavati Vishwavidyalaya (RDVV)</p>
+        <p class="mt-2">Jabalpur</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-6xl mx-auto px-5 py-16 md:py-20">
+    <div class="grad-card rounded-3xl border border-white/10 p-8 md:p-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold">Let’s Connect</h2>
+          <p class="text-slate-300 mt-2">Reach out for Oracle Fusion opportunities.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:yashraj.patel.in@gmail.com" class="btn pill px-5 py-3 font-semibold bg-gradient-to-r from-pink-500 to-indigo-500 text-white">Email</a>
+          <a href="tel:+919302613759" class="btn pill px-5 py-3 font-semibold bg-white/10 hover:bg-white/20 border border-white/10">Call</a>
+          <a href="https://linkedin.com/in/yashraj-patel-812bb7299" target="_blank" rel="noopener" class="btn pill px-5 py-3 font-semibold bg-white/10 hover:bg-white/20 border border-white/10">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-5 pb-10">
+    <div class="rounded-3xl glass border border-white/10 px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-slate-300 text-sm">© <span id="year"></span> Yashraj Patel. All rights reserved.</p>
+      <div class="flex items-center gap-3">
+        <a href="mailto:yashraj.patel.in@gmail.com" class="pill px-3 py-1 bg-white/10 border border-white/10 text-sm">Email</a>
+        <a href="https://scriptedbyyash.github.io/" target="_blank" rel="noopener" class="pill px-3 py-1 bg-white/10 border border-white/10 text-sm">Portfolio</a>
+        <a href="https://linkedin.com/in/yashraj-patel-812bb7299" target="_blank" rel="noopener" class="pill px-3 py-1 bg-white/10 border border-white/10 text-sm">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-5">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative max-w-lg w-full grad-card rounded-3xl border border-white/10 p-6">
+      <div class="flex items-start justify-between gap-4">
+        <h3 id="modalTitle" class="text-xl font-semibold">Project Title</h3>
+        <button id="modalClose" class="btn rounded-xl px-3 py-2 bg-white/10 hover:bg-white/20">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <p id="modalContent" class="text-slate-300 mt-3">Details...</p>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden">
+    <div class="pill px-4 py-2 bg-emerald-500 text-emerald-950 font-semibold shadow-lg">Copied to clipboard!</div>
   </div>
 
   <script>
-    // Automatically updates the footer year
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    // Theme toggle (persisted)
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.remove('text-slate-100');
+      document.body.classList.add('text-slate-800');
+      document.body.style.background = '#F8FAFC';
+    }
+    function setLight(on) {
+      if (on) {
+        document.body.classList.remove('text-slate-100');
+        document.body.classList.add('text-slate-800');
+        document.body.style.background = '#F8FAFC';
+        localStorage.setItem('theme', 'light');
+        themeIcon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-amber-500"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+      } else {
+        document.body.classList.remove('text-slate-800');
+        document.body.classList.add('text-slate-100');
+        document.body.style.background = '';
+        localStorage.setItem('theme', 'dark');
+        themeIcon.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-yellow-300"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" stroke-width="1.5"/></svg>';
+      }
+    }
+    themeToggle?.addEventListener('click', () => {
+      const isLight = localStorage.getItem('theme') === 'light';
+      setLight(!isLight);
+    });
+
+    // Copy to clipboard
+    const toast = document.getElementById('toast');
+    function showToast(msg='Copied to clipboard!') {
+      toast.querySelector('div').textContent = msg;
+      toast.classList.remove('hidden');
+      clearTimeout(showToast._t);
+      showToast._t = setTimeout(() => toast.classList.add('hidden'), 1400);
+    }
+    document.querySelectorAll('.copy').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-copy') || '';
+        try {
+          await navigator.clipboard.writeText(text);
+          showToast('Copied: ' + text);
+        } catch(e) {
+          showToast('Copy not supported here');
+        }
+      });
+    });
+
+    // Projects filter
+    const filters = document.querySelectorAll('.proj-filter');
+    const projects = document.querySelectorAll('.project');
+    function applyFilter(tag) {
+      filters.forEach(f => f.classList.remove('ring-brand'));
+      const active = Array.from(filters).find(f => f.dataset.tag === tag);
+      active?.classList.add('ring-brand');
+      projects.forEach(card => {
+        const tags = (card.dataset.tags || '').split(' ');
+        const show = tag === 'all' || tags.includes(tag);
+        card.style.display = show ? '' : 'none';
+      });
+    }
+    filters.forEach(f => f.addEventListener('click', () => applyFilter(f.dataset.tag)));
+    applyFilter('all');
+
+    // Modal controls
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalContent = document.getElementById('modalContent');
+    const modalClose = document.getElementById('modalClose');
+    document.querySelectorAll('.view-details').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modalTitle.textContent = btn.getAttribute('data-title') || 'Project';
+        modalContent.textContent = btn.getAttribute('data-details') || '';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+    modalClose?.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal.firstElementChild) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+
+    // "Download Resume" - opens print dialog for easy PDF save
+    document.getElementById('downloadResume')?.addEventListener('click', () => {
+      window.print();
+    });
+
+    // Keyboard escape to close modal
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
   </script>
 </body>
 </html>
