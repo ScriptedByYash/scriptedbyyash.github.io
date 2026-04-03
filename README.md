@@ -1,2 +1,0 @@
-# scriptedbyyash.github.io
-portfolio 
